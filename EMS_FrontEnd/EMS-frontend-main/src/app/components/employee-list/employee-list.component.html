@@ -1,0 +1,39 @@
+
+<div class="row">
+    <div class="col-12 text-center mt-3 mb-1">
+        <h1>Employee Table</h1>
+    </div>
+    <div class="col-10 offset-md-1 mt-3">
+        <table class="g-0 table table-dark table-hover table-striped text-center">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">UserName</th>
+                    <th scope="col">Email ID</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let employee of employeeList">
+                    <td scope="row"> {{employee.id}} </td>
+                    <td> {{employee.fullname}} </td>
+                    <td> {{employee.email}} </td>
+                    <td>
+                        <button (click)="updateEmployee(employee.id)" 
+                        class="btn btn-md btn-outline-primary  m-1">
+                            Update
+                        </button>
+                        <button (click)="deleteEmployee(employee.id)"
+                        class="btn btn-md btn-outline-danger  m-1">
+                            Delete
+                        </button>
+                        <button (click)="detailEmployee(employee.id)"
+                        class="btn btn-md btn-outline-info m-1">
+                            Details
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
